@@ -6,7 +6,7 @@
 #    By: fjenae <fjenae@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/05 19:40:33 by fjenae            #+#    #+#              #
-#    Updated: 2019/06/10 20:23:32 by fjenae           ###   ########.fr        #
+#    Updated: 2019/06/20 20:11:51 by fjenae           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,10 +64,10 @@
 
 all:
 	make -C libft/ fclean && make -C libft/
-	clang -g -o0 -I libft/includes -o get_next_line.o -c get_next_line.c
-	clang -g -o0 -I libft/includes -o main.o -c main.c
-	clang -g -o0 -o test_gnl main.o get_next_line.o -I libft/includes -L libft/ -lft
-	gcc -g -o0 main.c -o prog get_next_line.o libft.a
+	clang -Wall -Werror -Wextra -g -I libft/includes -o get_next_line.o -c get_next_line.c
+	clang -Wall -Werror -Wextra -g -I libft/includes -o main.o -c main.c
+	clang -Wall -Werror -Wextra -g -o test_gnl main.o get_next_line.o -I libft/includes -L libft/ -lft
+	gcc -g main.c -o prog get_next_line.o libft.a
 
 clean:
 	rm -r libft/*.o
